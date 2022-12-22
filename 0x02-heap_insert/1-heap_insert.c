@@ -86,10 +86,10 @@ void heap_check_father(heap_t **son, heap_t **father)
 }
 
 /**
- * binary_tree_node - creates a binary tree node
- * @parent: pointer to the parent node
- * @value: value to put in the new node
- * Return: pointer to the new node, or NULL on failure
+ * heap_insert - create a new tree
+ * @root: double pointer to the root node of the Heap
+ * @value: value store in the node to be inserted
+ * Return: a pointer to the inserted node, or NULL on failure
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
