@@ -18,7 +18,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 }
 
 /**
- * grids_sum - sum of two grids
+ * grid_sum - sum of two grids
  * @grid1: first sandpiles
  * @grid2: second sandpiles
  */
