@@ -1,38 +1,40 @@
 #include "menger.h"
 /**
- * menger - function that draws a 2D Menger Sponge 
+ * menger - function that draws a 2D Menger Sponge
  * @level: Menger Sponge to draw
  * Return: void
  */
 void menger(int level)
 {
-	int X, Y, d, m = 1;
+	int i = 0, j = 0, x = 0, y = 0, z = pow(3, level);
+	char p;
 
-	if (level >= 0)
+	if (level < 0)
+		return;
+
+	if (level == 0)
 	{
-		for (X = 0; X < level; X++)
-		{
-			d *= 3;
-		}
+		printf("#\n");
+		return;
+	}
 
-		for (X = 0; X < m; X++)
+	for (i = 0; i < z; i++)
+	{
+		for (j = 0; j < z; j++)
 		{
-			for (Y = 0; Y < m; Y++)
+			x = i;
+			y = j;
+			p = '#';
+
+			while (y)
 			{
-				for (d = m / 3; d > 0; d /= 3)
-				{
-					if ((X % (d * 3)) / d == 1 && (Y % (d * 3)) / d == 1)
-						break;
-				}
-				if (d)
-				{
-					printf(" ");
-				} else
-				{
-					printf("#");
-				}
+				if (x % 3 == 1 && y % 3 == 1)
+					p = ' ';
+				x = x / 3;
+				y = y / 3;
 			}
-			printf("\n");
+			printf("%c", p);
 		}
+		printf("\n");
 	}
 }
