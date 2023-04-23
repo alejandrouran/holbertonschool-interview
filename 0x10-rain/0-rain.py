@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""Given a list of non-negative integers representing the heights of walls with unit width 1
+"""Given a list of non-negative integers representing
+   the heights of walls with unit width 1
 """
+
 
 def rain(walls):
     """
