@@ -9,16 +9,16 @@ def makeChange(coins, total):
 
     if total <= 0:
         return 0
+    
+    inf = float('inf')
+    cache = [0] + [inf] * total
 
-    coins_required = [float('inf')] * (total + 1)
-    coins_required[0] = 0
-    for i in range(1, total + 1):
+    for i in range(len(cache)):
         for coin in coins:
             if coin <= i:
-                coins_required[i] = min(coins_required[i],
-                                        coins_required[i - coin] + 1)
+                cache[coin] = min(cache[i - coin], cache[coin])
 
-    if coins_required[total] == float('inf'):
-        return -1
+    if cache[total] != inf:
+        return cache[total]
 
-    return coins_required[total]
+    return -1
