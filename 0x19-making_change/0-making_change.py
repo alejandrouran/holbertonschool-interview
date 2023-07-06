@@ -10,15 +10,15 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
     
-    inf = float('inf')
-    cache = [0] + [inf] * total
+    temp_value = 0
+    coins.sort(reverse=True)
 
-    for i in range(len(cache)):
-        for coin in coins:
-            if coin <= i:
-                cache[coin] = min(cache[i - coin], cache[coin])
+    if total < 0:
+        return 0
 
-    if cache[total] != inf:
-        return cache[total]
+    for coin in coins:
+        if total % coin <= total:
+            temp_value += total // coin
+            total = total % coin
 
-    return -1
+    return temp_value if total == 0 else -1
