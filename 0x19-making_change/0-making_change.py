@@ -23,3 +23,4 @@ def makeChange(coins, total):
                 return counter
         i += 1
     return -1
+
