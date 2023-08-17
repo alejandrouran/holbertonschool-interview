@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Returns a list of lists of integers 
-representing the Pascal’s triangle of n
+Returns a list of lists of integers
+representing the Pascals triangle of n
 """
 
 
@@ -22,4 +22,3 @@ def pascal_triangle(n):
         triangle.append(new_row)
 
     return triangle
-
