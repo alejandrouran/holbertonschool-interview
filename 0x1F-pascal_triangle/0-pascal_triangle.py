@@ -6,6 +6,9 @@ representing the Pascals triangle of n
 
 
 def pascal_triangle(n):
+    """
+    Returns an empty list
+    """
     if n <= 0:
         return []
 
